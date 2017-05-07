@@ -35,7 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/src/discorde_tsp_cpp.o
+	${OBJECTDIR}/src/discorde_cpp.o
 
 
 # C Compiler Flags
@@ -56,21 +56,22 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdiscordetsp_cpp.a
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdiscorde_cpp.a
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdiscordetsp_cpp.a: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdiscorde_cpp.a: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdiscordetsp_cpp.a
-	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdiscordetsp_cpp.a ${OBJECTFILES} 
-	$(RANLIB) ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdiscordetsp_cpp.a
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdiscorde_cpp.a
+	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdiscorde_cpp.a ${OBJECTFILES} 
+	$(RANLIB) ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdiscorde_cpp.a
 
-${OBJECTDIR}/src/discorde_tsp_cpp.o: src/discorde_tsp_cpp.cpp
+${OBJECTDIR}/src/discorde_cpp.o: src/discorde_cpp.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I../c/src -std=c++98 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/discorde_tsp_cpp.o src/discorde_tsp_cpp.cpp
+	$(COMPILE.cc) -g -I../c/src -std=c++98 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/discorde_cpp.o src/discorde_cpp.cpp
 
 # Subprojects
 .build-subprojects:
+	cd ../c && ${MAKE}  -f Makefile CONF=Debug
 
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
@@ -78,6 +79,7 @@ ${OBJECTDIR}/src/discorde_tsp_cpp.o: src/discorde_tsp_cpp.cpp
 
 # Subprojects
 .clean-subprojects:
+	cd ../c && ${MAKE}  -f Makefile CONF=Debug clean
 
 # Enable dependency checking
 .dep.inc: .depcheck-impl

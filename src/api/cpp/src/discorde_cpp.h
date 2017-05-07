@@ -1,5 +1,5 @@
-#ifndef DISCORDE_TSP_CPP_H
-#define DISCORDE_TSP_CPP_H
+#ifndef DISCORDE_CPP_H
+#define DISCORDE_CPP_H
 
 #include <cstdlib>
 
@@ -7,49 +7,49 @@
 /**
  * Define some constants used by Discorde TSP.
  */
-#ifndef DISCORDE_TSP_CONSTANTS
+#ifndef DISCORDE_CONSTANTS
 
     /**
      * Returned if the solver has found a feasible tour. It does not 
      * guarantee optimality. For optimality the solver must return 
-     * {@code DISCORDE_TSP_RETURN_OK} and the status code must be 
-     * {@code DISCORDE_TSP_STATUS_OPTIMAL}.
+     * {@code DISCORDE_RETURN_OK} and the status code must be 
+     * {@code DISCORDE_STATUS_OPTIMAL}.
      */
-    #define DISCORDE_TSP_RETURN_OK 0
+    #define DISCORDE_RETURN_OK 0
 
     /**
      * Returned if the solver was not able to find a feasible tour.
      */
-    #define  DISCORDE_TSP_RETURN_FAILURE 1
+    #define  DISCORDE_RETURN_FAILURE 1
 
     /**
      * The solver stopped because the optimal tour was found.
      */
-    #define DISCORDE_TSP_STATUS_OPTIMAL 0
+    #define DISCORDE_STATUS_OPTIMAL 0
 
     /**
      * The solver stopped because it reached the time limit.
      */
-    #define DISCORDE_TSP_STATUS_TIMELIMIT 1
+    #define DISCORDE_STATUS_TIMELIMIT 1
 
     /**
      * The solver stopped because it found a tour with cost equal or better 
      * than the target value.
      */
-    #define DISCORDE_TSP_STATUS_TARGET 2
+    #define DISCORDE_STATUS_TARGET 2
 
     /**
      * The solver stopped due to some unknown event.
      */
-    #define DISCORDE_TSP_STATUS_UNKNOWN 3
+    #define DISCORDE_STATUS_UNKNOWN 3
 
-#endif /* DISCORDE_TSP_CONSTANTS */
+#endif /* DISCORDE_CONSTANTS */
 
 
 /**
  * Namespace where Discorde TSP functions are defined.
  */
-namespace discorde_tsp {
+namespace discorde {
     
     /**
      * This function solves an instance of the traveling salesman problem (TSP) 
@@ -80,12 +80,12 @@ namespace discorde_tsp {
      *          status, i.e, which stop criterion has been activated. It may be 
      *          set as {@code NULL} if this information is not desired. The 
      *          values of {@code out_status} at the end of the function may be: 
-     *          {@code DISCORDE_TSP_STATUS_OPTIMAL} if a tour has bee found and 
-     *          it is optimal; {@code DISCORDE_TSP_STATUS_TIMELIMIT} if the 
+     *          {@code DISCORDE_STATUS_OPTIMAL} if a tour has bee found and 
+     *          it is optimal; {@code DISCORDE_STATUS_TIMELIMIT} if the 
      *          solver has stopped because the time limit has been reached; 
-     *          {@code DISCORDE_TSP_STATUS_TARGET} if the solver has stopped 
+     *          {@code DISCORDE_STATUS_TARGET} if the solver has stopped 
      *          because a tour with cost equal or better than the {@code target} 
-     *          value has been found; or {@code DISCORDE_TSP_STATUS_UNKNOWN} if 
+     *          value has been found; or {@code DISCORDE_STATUS_UNKNOWN} if 
      *          the solver has stopped unexpectedly.
      * @param   in_tour
      *          An array of length {@code n_nodes} which gives a starting tour 
@@ -103,8 +103,8 @@ namespace discorde_tsp {
      *          with cost equal or better than {@code target} value. It may be 
      *          {@code NULL} if no target value is desired.
      * 
-     * @return  {@code DISCORDE_TSP_RETURN_OK} if a feasible tour has been found, 
-     *          or {@code DISCORDE_TSP_RETURN_FAILURE} otherwise.
+     * @return  {@code DISCORDE_RETURN_OK} if a feasible tour has been found, 
+     *          or {@code DISCORDE_RETURN_FAILURE} otherwise.
      */
     int concorde(int n_nodes, int n_edges, int* edges, int* edges_costs, 
             int* out_tour, double* out_cost, int* out_status = NULL, 
@@ -137,12 +137,12 @@ namespace discorde_tsp {
      *          status, i.e, which stop criterion has been activated. It may be 
      *          set as {@code NULL} if this information is not desired. The 
      *          values of {@code out_status} at the end of the function may be: 
-     *          {@code DISCORDE_TSP_STATUS_OPTIMAL} if a tour has bee found and 
-     *          it is optimal; {@code DISCORDE_TSP_STATUS_TIMELIMIT} if the 
+     *          {@code DISCORDE_STATUS_OPTIMAL} if a tour has bee found and 
+     *          it is optimal; {@code DISCORDE_STATUS_TIMELIMIT} if the 
      *          solver has stopped because the time limit has been reached; 
-     *          {@code DISCORDE_TSP_STATUS_TARGET} if the solver has stopped 
+     *          {@code DISCORDE_STATUS_TARGET} if the solver has stopped 
      *          because a tour with cost equal or better than the {@code target} 
-     *          value has been found; or {@code DISCORDE_TSP_STATUS_UNKNOWN} if 
+     *          value has been found; or {@code DISCORDE_STATUS_UNKNOWN} if 
      *          the solver has stopped unexpectedly.
      * @param   in_tour
      *          An array of length {@code n_nodes} which gives a starting tour 
@@ -160,8 +160,8 @@ namespace discorde_tsp {
      *          with cost equal or better than {@code target} value. It may be 
      *          {@code NULL} if no target value is desired.
      * 
-     * @return  {@code DISCORDE_TSP_RETURN_OK} if a feasible tour has been found, 
-     *          or {@code DISCORDE_TSP_RETURN_FAILURE} otherwise.
+     * @return  {@code DISCORDE_RETURN_OK} if a feasible tour has been found, 
+     *          or {@code DISCORDE_RETURN_FAILURE} otherwise.
      */
     int concorde_sparse(int n_nodes, int n_edges, int** edges, int* edges_costs, 
             int* out_tour, double* out_cost, int* out_status = NULL, 
@@ -191,12 +191,12 @@ namespace discorde_tsp {
      *          status, i.e, which stop criterion has been activated. It may be 
      *          set as {@code NULL} if this information is not desired. The 
      *          values of {@code out_status} at the end of the function may be: 
-     *          {@code DISCORDE_TSP_STATUS_OPTIMAL} if a tour has bee found and 
-     *          it is optimal; {@code DISCORDE_TSP_STATUS_TIMELIMIT} if the 
+     *          {@code DISCORDE_STATUS_OPTIMAL} if a tour has bee found and 
+     *          it is optimal; {@code DISCORDE_STATUS_TIMELIMIT} if the 
      *          solver has stopped because the time limit has been reached; 
-     *          {@code DISCORDE_TSP_STATUS_TARGET} if the solver has stopped 
+     *          {@code DISCORDE_STATUS_TARGET} if the solver has stopped 
      *          because a tour with cost equal or better than the {@code target} 
-     *          value has been found; or {@code DISCORDE_TSP_STATUS_UNKNOWN} if 
+     *          value has been found; or {@code DISCORDE_STATUS_UNKNOWN} if 
      *          the solver has stopped unexpectedly.
      * @param   in_tour
      *          An array of length {@code n_nodes} which gives a starting tour 
@@ -214,8 +214,8 @@ namespace discorde_tsp {
      *          with cost equal or better than {@code target} value. It may be 
      *          {@code NULL} if no target value is desired.
      * 
-     * @return  {@code DISCORDE_TSP_RETURN_OK} if a feasible tour has been found, 
-     *          or {@code DISCORDE_TSP_RETURN_FAILURE} otherwise.
+     * @return  {@code DISCORDE_RETURN_OK} if a feasible tour has been found, 
+     *          or {@code DISCORDE_RETURN_FAILURE} otherwise.
      */
     int concorde_full(int n_nodes, int** cost_matrix, 
             int* out_tour, double* out_cost, int* out_status = NULL, 
@@ -261,8 +261,8 @@ namespace discorde_tsp {
      *          with cost equal or better than {@code target} value. It may be 
      *          {@code NULL} if no target value is desired.
      * 
-     * @return  {@code DISCORDE_TSP_RETURN_OK} if a feasible tour has been found, 
-     *          or {@code DISCORDE_TSP_RETURN_FAILURE} otherwise.
+     * @return  {@code DISCORDE_RETURN_OK} if a feasible tour has been found, 
+     *          or {@code DISCORDE_RETURN_FAILURE} otherwise.
      */
     int linkernighan(int n_nodes, int n_edges, int* edges, int* edges_costs, 
             int* out_tour, double* out_cost, int* in_tour = NULL, 
@@ -304,8 +304,8 @@ namespace discorde_tsp {
      *          with cost equal or better than {@code target} value. It may be 
      *          {@code NULL} if no target value is desired.
      * 
-     * @return  {@code DISCORDE_TSP_RETURN_OK} if a feasible tour has been found, 
-     *          or {@code DISCORDE_TSP_RETURN_FAILURE} otherwise.
+     * @return  {@code DISCORDE_RETURN_OK} if a feasible tour has been found, 
+     *          or {@code DISCORDE_RETURN_FAILURE} otherwise.
      */
     int linkernighan_sparse(int n_nodes, int n_edges, int** edges, int* edges_costs, 
             int* out_tour, double* out_cost, int* in_tour = NULL, 
@@ -344,8 +344,8 @@ namespace discorde_tsp {
      *          with cost equal or better than {@code target} value. It may be 
      *          {@code NULL} if no target value is desired.
      * 
-     * @return  {@code DISCORDE_TSP_RETURN_OK} if a feasible tour has been found, 
-     *          or {@code DISCORDE_TSP_RETURN_FAILURE} otherwise.
+     * @return  {@code DISCORDE_RETURN_OK} if a feasible tour has been found, 
+     *          or {@code DISCORDE_RETURN_FAILURE} otherwise.
      */
     int linkernighan_full(int n_nodes, int** cost_matrix, 
             int* out_tour, double* out_cost, int* in_tour = NULL, 
@@ -353,4 +353,4 @@ namespace discorde_tsp {
     
 }
 
-#endif /* DISCORDE_TSP_CPP_H */
+#endif /* DISCORDE_CPP_H */

@@ -4,7 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>src/discorde_tsp_cpp.h</itemPath>
+      <itemPath>src/discorde_cpp.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -13,7 +13,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>src/discorde_tsp_cpp.cpp</itemPath>
+      <itemPath>src/discorde_cpp.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -46,13 +46,37 @@
           </incDir>
         </ccTool>
         <archiverTool>
-          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdiscordetsp_cpp.a</output>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdiscorde_cpp.a</output>
         </archiverTool>
+        <requiredProjects>
+          <makeArtifact PL="../c"
+                        CT="3"
+                        CN="Debug"
+                        AC="false"
+                        BL="true"
+                        WD="../c"
+                        BC="${MAKE}  -f Makefile CONF=Debug"
+                        CC="${MAKE}  -f Makefile CONF=Debug clean"
+                        OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdiscorde.a">
+          </makeArtifact>
+        </requiredProjects>
       </compileType>
       <packaging>
         <packType>Tar</packType>
-        <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/discorde-tsp-cpp.tar</output>
+        <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/discorde-cpp_debug.tar</output>
         <packFileList>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}discorde_cpp.h"
+                            from="src/discorde_cpp.h"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}lib/libdiscorde.a"
+                            from="../c/dist/Debug/GNU-Linux/libdiscorde.a"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
           <packFileListElem type="File"
                             to="${PACKAGE_TOP_DIR}lib/${OUTPUT_BASENAME}"
                             from="${OUTPUT_PATH}"
@@ -61,9 +85,9 @@
                             group="bin"/>
         </packFileList>
       </packaging>
-      <item path="src/discorde_tsp_cpp.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/discorde_cpp.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/discorde_tsp_cpp.h" ex="false" tool="3" flavor2="0">
+      <item path="src/discorde_cpp.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="3">
@@ -90,13 +114,37 @@
           <developmentMode>5</developmentMode>
         </asmTool>
         <archiverTool>
-          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdiscordetsp_cpp.a</output>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdiscorde_cpp.a</output>
         </archiverTool>
+        <requiredProjects>
+          <makeArtifact PL="../c"
+                        CT="3"
+                        CN="Release"
+                        AC="true"
+                        BL="true"
+                        WD="../c"
+                        BC="${MAKE}  -f Makefile CONF=Release"
+                        CC="${MAKE}  -f Makefile CONF=Release clean"
+                        OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdiscorde.a">
+          </makeArtifact>
+        </requiredProjects>
       </compileType>
       <packaging>
         <packType>Tar</packType>
-        <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/discorde-tsp-cpp.tar</output>
+        <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/discorde-cpp.tar</output>
         <packFileList>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}discorde_cpp.h"
+                            from="src/discorde_cpp.h"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}lib/libdiscorde.a"
+                            from="../c/dist/Release/GNU-Linux/libdiscorde.a"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
           <packFileListElem type="File"
                             to="${PACKAGE_TOP_DIR}lib/${OUTPUT_BASENAME}"
                             from="${OUTPUT_PATH}"
@@ -105,9 +153,9 @@
                             group="bin"/>
         </packFileList>
       </packaging>
-      <item path="src/discorde_tsp_cpp.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/discorde_cpp.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/discorde_tsp_cpp.h" ex="false" tool="3" flavor2="0">
+      <item path="src/discorde_cpp.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>

@@ -3,12 +3,14 @@
     <type>org.netbeans.modules.cnd.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>discorde-tsp-cpp</name>
+            <name>discorde-cpp</name>
             <c-extensions/>
             <cpp-extensions>cpp</cpp-extensions>
             <header-extensions>h</header-extensions>
             <sourceEncoding>UTF-8</sourceEncoding>
-            <make-dep-projects/>
+            <make-dep-projects>
+                <make-dep-project>../c</make-dep-project>
+            </make-dep-projects>
             <sourceRootList>
                 <sourceRootElem>src</sourceRootElem>
             </sourceRootList>
