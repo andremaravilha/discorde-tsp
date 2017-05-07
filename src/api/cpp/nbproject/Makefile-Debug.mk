@@ -34,7 +34,8 @@ include Makefile
 OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
-OBJECTFILES=
+OBJECTFILES= \
+	${OBJECTDIR}/src/discorde_tsp_cpp.o
 
 
 # C Compiler Flags
@@ -62,6 +63,11 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdiscordetsp_cpp.a: ${OBJECTFILES}
 	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdiscordetsp_cpp.a
 	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdiscordetsp_cpp.a ${OBJECTFILES} 
 	$(RANLIB) ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdiscordetsp_cpp.a
+
+${OBJECTDIR}/src/discorde_tsp_cpp.o: src/discorde_tsp_cpp.cpp
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I../c/src -std=c++98 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/discorde_tsp_cpp.o src/discorde_tsp_cpp.cpp
 
 # Subprojects
 .build-subprojects:

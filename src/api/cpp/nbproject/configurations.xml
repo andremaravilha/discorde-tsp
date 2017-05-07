@@ -4,6 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>src/discorde_tsp_cpp.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -12,6 +13,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>src/discorde_tsp_cpp.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -25,6 +27,9 @@
       <itemPath>Makefile</itemPath>
     </logicalFolder>
   </logicalFolder>
+  <sourceRootList>
+    <Elem>src</Elem>
+  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="Debug" type="3">
@@ -36,6 +41,9 @@
       <compileType>
         <ccTool>
           <standard>4</standard>
+          <incDir>
+            <pElem>../c/src</pElem>
+          </incDir>
         </ccTool>
         <archiverTool>
           <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdiscordetsp_cpp.a</output>
@@ -53,6 +61,10 @@
                             group="bin"/>
         </packFileList>
       </packaging>
+      <item path="src/discorde_tsp_cpp.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/discorde_tsp_cpp.h" ex="false" tool="3" flavor2="0">
+      </item>
     </conf>
     <conf name="Release" type="3">
       <toolsSet>
@@ -67,6 +79,9 @@
         <ccTool>
           <developmentMode>5</developmentMode>
           <standard>4</standard>
+          <incDir>
+            <pElem>../c/src</pElem>
+          </incDir>
         </ccTool>
         <fortranCompilerTool>
           <developmentMode>5</developmentMode>
@@ -90,6 +105,10 @@
                             group="bin"/>
         </packFileList>
       </packaging>
+      <item path="src/discorde_tsp_cpp.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/discorde_tsp_cpp.h" ex="false" tool="3" flavor2="0">
+      </item>
     </conf>
   </confs>
 </configurationDescriptor>
