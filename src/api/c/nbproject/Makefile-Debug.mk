@@ -35,7 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/src/discorde_tsp_c.o
+	${OBJECTDIR}/src/discorde_c.o
 
 
 # C Compiler Flags
@@ -56,18 +56,18 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdiscordetsp.a
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdiscorde.a
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdiscordetsp.a: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdiscorde.a: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdiscordetsp.a
-	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdiscordetsp.a ${OBJECTFILES} 
-	$(RANLIB) ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdiscordetsp.a
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdiscorde.a
+	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdiscorde.a ${OBJECTFILES} 
+	$(RANLIB) ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdiscorde.a
 
-${OBJECTDIR}/src/discorde_tsp_c.o: src/discorde_tsp_c.c
+${OBJECTDIR}/src/discorde_c.o: src/discorde_c.c
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.c) -g -I../../dependencies -std=c89 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/discorde_tsp_c.o src/discorde_tsp_c.c
+	$(COMPILE.c) -g -I../../dependencies -std=c89 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/discorde_c.o src/discorde_c.c
 
 # Subprojects
 .build-subprojects:

@@ -1,4 +1,4 @@
-#include "discorde_tsp_c.h"
+#include "discorde_c.h"
 #include <stdlib.h>
 #include <stdbool.h>
 #include <time.h>
@@ -46,21 +46,21 @@ int concorde(int n_nodes, int n_edges, int* edges, int* edges_costs,
     /* Set solver status */
     if (out_status != NULL) {
         if (success == 1 && optimal != 0) {
-            *out_status = DISCORDE_TSP_STATUS_OPTIMAL;
+            *out_status = DISCORDE_STATUS_OPTIMAL;
         } else if (hit_timelimit == 1) {
-            *out_status = DISCORDE_TSP_STATUS_TIMELIMIT;
+            *out_status = DISCORDE_STATUS_TIMELIMIT;
         } else if (success == 1 && *out_cost <= *target) {
-            *out_status = DISCORDE_TSP_STATUS_TARGET;
+            *out_status = DISCORDE_STATUS_TARGET;
         } else {
-            *out_status = DISCORDE_TSP_STATUS_UNKNOWN;
+            *out_status = DISCORDE_STATUS_UNKNOWN;
         }
     }
     
     /* Set the return value */
     if (success == 1) {
-        return_value = DISCORDE_TSP_RETURN_OK;
+        return_value = DISCORDE_RETURN_OK;
     } else {
-        return_value = DISCORDE_TSP_RETURN_FAILURE;
+        return_value = DISCORDE_RETURN_FAILURE;
     }
     
     /* Free resources */
@@ -199,7 +199,7 @@ int linkernighan(int n_nodes, int n_edges, int* edges, int* edges_costs,
             NULL, kicktype, &rstate);
     
     /* Set return value */
-    return_value = DISCORDE_TSP_RETURN_OK;
+    return_value = DISCORDE_RETURN_OK;
     
     return return_value;
 }

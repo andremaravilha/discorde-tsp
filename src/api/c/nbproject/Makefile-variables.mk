@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-Linux
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux
-CND_ARTIFACT_NAME_Debug=libdiscordetsp.a
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/libdiscordetsp.a
+CND_ARTIFACT_NAME_Debug=libdiscorde.a
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/libdiscorde.a
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux/package
-CND_PACKAGE_NAME_Debug=discorde-tsp-c.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/discorde-tsp-c.tar
+CND_PACKAGE_NAME_Debug=discorde-c_degub.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/discorde-c_degub.tar
 # Release configuration
 CND_PLATFORM_Release=GNU-Linux
 CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux
-CND_ARTIFACT_NAME_Release=libdiscordetsp.a
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/libdiscordetsp.a
+CND_ARTIFACT_NAME_Release=libdiscorde.a
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/libdiscorde.a
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
-CND_PACKAGE_NAME_Release=discorde-tsp-c.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/discorde-tsp-c.tar
+CND_PACKAGE_NAME_Release=discorde-c.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/discorde-c.tar
 #
 # include compiler specific variables
 #
