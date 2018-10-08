@@ -11,15 +11,15 @@ Concorde solver may be called directly from the command line interface or from C
 
 When calling any of the functions of the Discorde TSP API, one of the following values is returned:
 
-* `DISCORDE_RETURN_OK` : if the solver has found a feasible tour. It does not guarantee optimality. To check optimality, the solver must return DISCORDE_RETURN_OK and the status code must be equal to DISCORDE_STATUS_OPTIMAL.
-* `DISCORDE_RETURN_FAILURE` : returned if the solver was not able to find a feasible tour.
+* `DISCORDE_RETURN_OK` : If the solver has found a feasible tour. It does not guarantee optimality. To check optimality, the solver must return DISCORDE_RETURN_OK and the status code must be equal to DISCORDE_STATUS_OPTIMAL.
+* `DISCORDE_RETURN_FAILURE` : Returned if the solver was not able to find a feasible tour.
 
-Once a call to a function of the Discorde TSP API has returned, the status code attribute is set to one the possible values. The attribute takes an integer value, but we recommend that you use one of the pre-defined status constants to check the status in your program.
+Once a call to a function of the Discorde TSP API has returned, the status code attribute is set to one the possible values. The attribute takes an integer value, but we recommend using one of the pre-defined status constants to check the status in your program.
 
-* `DISCORDE_STATUS_OPTIMAL` : the solver stopped because the optimal tour was found.
-* `DISCORDE_STATUS_TIMELIMIT` : the solver stopped because it reached the time limit.
-* `DISCORDE_STATUS_TARGET` : the solver stopped because it found a tour with cost equal or better than the target value.
-* `DISCORDE_STATUS_UNKNOWN` : the solver stopped due to some unknown event.
+* `DISCORDE_STATUS_OPTIMAL` : The solver stopped because the optimal tour was found.
+* `DISCORDE_STATUS_TIMELIMIT` : The solver stopped because it reached the time limit.
+* `DISCORDE_STATUS_TARGET` : The solver stopped because it found a tour with cost equal or better than the target value.
+* `DISCORDE_STATUS_UNKNOWN` : The solver stopped due to some unknown event.
 
 
 ### Functions
@@ -251,9 +251,13 @@ target | Indicates that the solver should stop as soon as it finds a tour with c
 
 ## Building and Running the examples
 
-To build and run the examples, we refer to the files in `examples` directory. For Linux, the `examples/build` contains an example Makefile. In this Makefile, we assume a 64-bit Linux distribution, with Concorde's library `libconcorde.a` compiled for CPLEX and stored in `/opt/concorde` directory, and CPLEX installed in `/opt/ibm/ILOG/CPLEX_Studio127/`.
+To build and run the examples, we refer to the files in `examples` directory. There are an example using C programming language (at `examples/c`) and another using C++ programming language (at `examples/cpp`). In addition to the source code showing how to use the Discorde API, it is provided a `Makefile` to compile the example and a `CMakeLists.txt` file for those who prefer to use CMAKE. For both examples the `Makefile` and `CMakeLists.txt` assume a 64-bit Linux distribution, with Concorde's library `libconcorde.a` compiled for CPLEX and stored in `/opt/concorde` directory, and CPLEX installed in `/opt/ibm/ILOG/CPLEX_Studio1271/`.
 
-If you want to create your own project or Makefile to build a C or C++ program that uses Concorde TSP software throgh Discorde TSP API, the details will depend on your platform and development environment, but we'd like to point out a few tips:
+If you want to create your own project using a Makefile or CMAKE to build a C or C++ program that uses Concorde TSP software through Discorde TSP API, you can adapt the `Makefile` or `CMakeLists.txt` files. The details will depend on your platform and development environment, but we'd like to point out a few tips:
 
-* The program must link Discorde TSP libraries (e.g., `libdiscorde.a`, `libdiscorde_cpp.a`), Condorde TSP libraries (e.g., `libconcorde.a`), and CPLEX (or QSopt LP) libraries (e.g., `libconcert.a, libilocplex.a, libcplex`).
-* A C++ program that uses Discorde TSP API must link both Discorde C++ library (e.g., `libdiscorde_cpp.a`) and  Discorde C library (e.g. `libdiscorde.a`). However, for a C program, just the Discorde C library must be linked.
+* The program must link Discorde TSP libraries (i.e., `libdiscorde.a`, `libdiscorde_cpp.a`), Condorde TSP libraries (i.e., `libconcorde.a`), and CPLEX (or QSopt LP) libraries (i.e., `libconcert.a, libilocplex.a, libcplex`).
+* A C++ program that uses Discorde TSP API must link both Discorde C++ library (i.e., `libdiscorde_cpp.a`) and  Discorde C library (i.e., `libdiscorde.a`). However, for a C program, just the Discorde C library must be linked.
+
+
+The code has been tested with CPLEX 12.7. If you have used it with a newer version of CPLEX or other solver, please let me know.
+
